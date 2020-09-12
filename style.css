@@ -49,14 +49,9 @@ body{
     border: 1px solid blueviolet;
 }
 .zero{
-    text-align: center;
     grid-area: zero;
 }
 .button:hover{
-    color: white;
-    background-color: lightgrey;
-}
-.zero:hover{
     color: white;
     background-color: lightgrey;
 }

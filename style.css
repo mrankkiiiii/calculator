@@ -62,6 +62,7 @@ body{
     transition: 0.3s;
     background-color: darkcyan;
     height: 8vh;
+    min-height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,4 +87,18 @@ body{
 }
 .button:hover{
     background-color:coral;
+}
+@media screen and (max-width: 768px)
+{
+    .calculator{
+        margin: 50px 10px 0px 10px;
+        min-width: 100px;
+    }
+}
+@media screen and (max-width: 1024px)
+{
+    .calculator{
+        margin: 50px 10px 0px 10px;
+        min-width: 100px;
+    }
 }

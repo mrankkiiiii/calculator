@@ -10,19 +10,26 @@ function isOperator(value){
 }
 
 function clickhandler(event){
-
     var value = this.getAttribute('data-value');
     var text  = display.textContent.trim();
     if(isOperator(value))
     {
         operator = value;
         operand1 = parseFloat(text);
-        display.textContent="";
+        display.textContent= "";
     } else if(value == 'AC'){
         display.textContent ="";
         operand1 = 0;
         operand2 = null;
         operator = null;
+    } else if( value == 'sign'){
+        operand1 = parseFloat(text);
+        operand1 = -1 * operand1;
+        display.textContent = operand1;
+    } else if (value == "%") {
+        operand1 = parseFloat(text);
+        operand1 = operand1 / 100;
+        display.textContent = operand1;
     }
      else if(value == '='){
         operand2 = parseFloat(text);

@@ -1,6 +1,6 @@
 var display = document.getElementById('display');
 var button = document.getElementsByClassName('button');
-
+var buttons = document.getElementsByClassName('buttons')
 var operand1 = 0;
 var operand2 = null;
 var operator = null;
@@ -10,7 +10,14 @@ function isOperator(value){
 }
 
 function clickhandler(event){
-    var value = this.getAttribute('data-value');
+    if(event.type=='click')
+    {
+        var value = this.getAttribute('data-value');
+    }
+    else{
+        var value = event.key;
+    }
+    
     var text  = display.textContent.trim();
     if(isOperator(value))
     {
@@ -46,7 +53,7 @@ function clickhandler(event){
         display.textContent += value;
     }
 }
-
 for ( let i = 0 ; i<button.length; i++ ){
     button[i].addEventListener('click',clickhandler);
 }
+addEventListener('keydown',clickhandler);

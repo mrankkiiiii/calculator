@@ -38,7 +38,7 @@ function clickhandler(event){
         operand1 = operand1 / 100;
         display.textContent = operand1;
     }
-     else if(value == '='){
+     else if(value == '=' || value =='Enter'){
         operand2 = parseFloat(text);
         var result = eval(operand1+ ' '+ operator+ ' '+operand2);
         if(result)
@@ -56,4 +56,4 @@ function clickhandler(event){
 for ( let i = 0 ; i<button.length; i++ ){
     button[i].addEventListener('click',clickhandler);
 }
-addEventListener('keydown',clickhandler);
+addEventListener('keypress',clickhandler);
